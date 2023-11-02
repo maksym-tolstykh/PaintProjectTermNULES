@@ -6,31 +6,34 @@
         xmlns:local="clr-namespace:PaintProjectTerm"
         
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="500" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="193*"/>
-            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
         <Border Margin="10,10,271,10" BorderBrush="Black" BorderThickness="1">
             <Canvas x:Name="paintCanvas" HorizontalAlignment="Center" Height="386"  VerticalAlignment="Center" Width="465" MouseMove="Canvas_MouseMove" Background="White" MouseLeftButtonDown="paintCanvas_MouseLeftButtonDown" MouseLeftButtonUp="paintCanvas_MouseLeftButtonUp"/>
         </Border>
-        <GroupBox HorizontalAlignment="Left" Height="69" Header="Кольори" Margin="628,22,0,0" VerticalAlignment="Top" Width="134">
+        <GroupBox HorizontalAlignment="Left" Height="148" Header="Кольори" Margin="628,22,0,0" VerticalAlignment="Top" Width="134">
             <StackPanel HorizontalAlignment="Left" Height="124" VerticalAlignment="Top" Width="124">
-                <RadioButton Content="Червоний" Checked="RadioButton_Checked"/>
-                <RadioButton Content="Синій" Checked="RadioButton_Checked_1"/>
-                <RadioButton Content="Чорний" Checked="RadioButton_Checked_2" IsChecked="True"/>
+                <RadioButton Content="Чорний" Checked="RadioButton_Checked_2" IsChecked="True" Width="123" Background="Black" />
+                <RadioButton Content="Червоний" Checked="RadioButton_Checked" Width="124" Background="Red"/>
+                <RadioButton Content="Синій" Checked="RadioButton_Checked_1" Background="Blue" Width="124"/>
+                <RadioButton Content="Фіолетовий"   Width="123" Background="Purple" Checked="RadioButton_Checked_6" />
             </StackPanel>
+
         </GroupBox>
-        <GroupBox HorizontalAlignment="Left" Height="82" Header="Розмір" Margin="628,107,0,0" VerticalAlignment="Top" Width="134">
+        <GroupBox HorizontalAlignment="Left" Height="82" Header="Розмір" Margin="628,0,0,0" VerticalAlignment="Center" Width="134">
             <StackPanel HorizontalAlignment="Left" Height="61" VerticalAlignment="Top" Width="124">
                 <RadioButton Content="Маленький" Checked="RadioButton_Checked_3" IsChecked="True"/>
                 <RadioButton Content="Середній" Checked="RadioButton_Checked_4"/>
                 <RadioButton Content="Великий" Checked="RadioButton_Checked_5"/>
             </StackPanel>
         </GroupBox>
-        <Button Content="Очистити" HorizontalAlignment="Left" Height="22" Margin="659,195,0,0" VerticalAlignment="Top" Width="103" Click="Button_Click"/>
-        <Button Content="Зберегти" HorizontalAlignment="Left" Height="22" Margin="659,238,0,0" VerticalAlignment="Top" Width="103" Click="SaveButton_Click"/>
+        <Button Content="Очистити все" HorizontalAlignment="Left" Height="22" Margin="545,394,0,0" VerticalAlignment="Top" Width="103" Click="Button_Click_1"/>
+        <Button Content="Зберегти" HorizontalAlignment="Left" Height="22" Margin="659,394,0,0" VerticalAlignment="Top" Width="103" Click="SaveButton_Click"/>
+        <Button Content="Відмінити попередню дію" HorizontalAlignment="Left" Height="22" Margin="545,355,0,0" VerticalAlignment="Top" Width="165" Click="Button_Click"/>
 
 
 

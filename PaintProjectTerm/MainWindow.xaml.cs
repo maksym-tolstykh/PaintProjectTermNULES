@@ -37,6 +37,12 @@ namespace PaintProjectTerm
                 paintBrush.SetColor(Brushes.Black);
             }
         }
+        private void RadioButton_Checked_6(object sender, RoutedEventArgs e)
+        {
+            paintBrush.SetColor(Brushes.Purple);
+        }
+
+        //End Brushes Color
 
         private void RadioButton_Checked_3(object sender, RoutedEventArgs e)
         {
@@ -57,10 +63,14 @@ namespace PaintProjectTerm
             paintBrush.SetSize(PaintBrush.BrushSize.Large);
         }
 
-        #region Функції кнопок
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             paintBrush.Undo();
+        }
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            paintBrush.ClearAll();
         }
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
@@ -96,14 +106,6 @@ namespace PaintProjectTerm
             }
         }
 
-
-
-
-
-        #endregion
-
-
-
         private void paintCanvas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             paintBrush.StartPainting();
@@ -118,6 +120,8 @@ namespace PaintProjectTerm
         {
             paintBrush.Paint(e.GetPosition(paintCanvas));
         }
+
+   
     }
 
     public class PaintBrush
@@ -178,6 +182,10 @@ namespace PaintProjectTerm
             {
                 canvas.Children.RemoveAt(count - 1);
             }
+        }  
+        public void ClearAll()
+        {
+                canvas.Children.Clear();
         }
 
         private Ellipse CreateEllipse(Point position)
