@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace PaintProjectTerm
@@ -54,10 +57,52 @@ namespace PaintProjectTerm
             paintBrush.SetSize(PaintBrush.BrushSize.Large);
         }
 
+        #region Функції кнопок
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             paintBrush.Undo();
         }
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Створюємо діалог вибору файлу
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "PNG Image|*.png";
+            saveFileDialog.Title = "Зберегти зображення";
+
+            // Показуємо діалог вибору файлу і очікуємо на вибір шляху
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                // Отримуємо шлях до вибраного файлу
+                string filePath = saveFileDialog.FileName;
+
+                double canvasWidth = paintCanvas.ActualWidth;
+                double canvasHeight = paintCanvas.ActualHeight;
+
+                // Створюємо рендер-об'єкт з правильним розміром, який відповідає канвасу
+                RenderTargetBitmap renderBitmap = new RenderTargetBitmap(
+                    (int)canvasWidth, (int)canvasHeight, 96d, 96d, PixelFormats.Default);
+
+                // Рендеримо канвас
+                renderBitmap.Render(paintCanvas);
+
+                // Створюємо кодер для формату PNG і зберігаємо зображення
+                PngBitmapEncoder encoder = new PngBitmapEncoder();
+                encoder.Frames.Add(BitmapFrame.Create(renderBitmap));
+
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    encoder.Save(fileStream);
+                }
+            }
+        }
+
+
+
+
+
+        #endregion
+
+
 
         private void paintCanvas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
