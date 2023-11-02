@@ -12,12 +12,12 @@
             <StackPanel HorizontalAlignment="Left" Height="124" VerticalAlignment="Top" Width="124">
                 <RadioButton Content="Червоний" Checked="RadioButton_Checked"/>
                 <RadioButton Content="Синій" Checked="RadioButton_Checked_1"/>
-                <RadioButton Content="Чорний" Checked="RadioButton_Checked_2"/>
+                <RadioButton Content="Чорний" Checked="RadioButton_Checked_2" IsChecked="True"/>
             </StackPanel>
         </GroupBox>
         <GroupBox HorizontalAlignment="Left" Height="82" Header="Розмір" Margin="10,96,0,0" VerticalAlignment="Top" Width="134">
             <StackPanel HorizontalAlignment="Left" Height="61" VerticalAlignment="Top" Width="124">
-                <RadioButton Content="Маленький" Checked="RadioButton_Checked_3"/>
+                <RadioButton Content="Маленький" Checked="RadioButton_Checked_3" IsChecked="True"/>
                 <RadioButton Content="Середній" Checked="RadioButton_Checked_4"/>
                 <RadioButton Content="Великий" Checked="RadioButton_Checked_5"/>
             </StackPanel>

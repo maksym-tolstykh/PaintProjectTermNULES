@@ -29,12 +29,19 @@ namespace PaintProjectTerm
 
         private void RadioButton_Checked_2(object sender, RoutedEventArgs e)
         {
-            paintBrush.SetColor(Brushes.Black);
+            if (paintBrush != null)
+            {
+                paintBrush.SetColor(Brushes.Black);
+            }
         }
 
         private void RadioButton_Checked_3(object sender, RoutedEventArgs e)
         {
-            paintBrush.SetSize(PaintBrush.BrushSize.Small);
+            if (paintBrush != null)
+            {
+                paintBrush.SetSize(PaintBrush.BrushSize.Small);
+            }
+            
         }
 
         private void RadioButton_Checked_4(object sender, RoutedEventArgs e)
