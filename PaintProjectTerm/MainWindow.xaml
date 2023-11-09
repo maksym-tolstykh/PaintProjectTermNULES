@@ -20,7 +20,7 @@
                 <RadioButton Content="Чорний" Checked="RadioButton_Checked_2" IsChecked="True" Width="123" Background="Black" />
                 <RadioButton Content="Червоний" Checked="RadioButton_Checked" Width="124" Background="Red"/>
                 <RadioButton Content="Синій" Checked="RadioButton_Checked_1" Background="Blue" Width="124"/>
-                <RadioButton Content="Фіолетовий"   Width="123" Background="Purple" Checked="RadioButton_Checked_6" />
+                <RadioButton Content="Фіолетовий"   Width="124" Background="Purple" Checked="RadioButton_Checked_6" />
             </StackPanel>
 
         </GroupBox>
@@ -34,6 +34,7 @@
         <Button Content="Очистити все" HorizontalAlignment="Left" Height="22" Margin="545,394,0,0" VerticalAlignment="Top" Width="103" Click="Button_Click_1"/>
         <Button Content="Зберегти" HorizontalAlignment="Left" Height="22" Margin="659,394,0,0" VerticalAlignment="Top" Width="103" Click="SaveButton_Click"/>
         <Button Content="Відмінити попередню дію" HorizontalAlignment="Left" Height="22" Margin="545,355,0,0" VerticalAlignment="Top" Width="165" Click="Button_Click"/>
+        <Button Content="Вибрати фото" HorizontalAlignment="Left" Height="22" Margin="659,427,0,0" VerticalAlignment="Top" Width="103" Click="OpenImage_Click"/>
 
 
 

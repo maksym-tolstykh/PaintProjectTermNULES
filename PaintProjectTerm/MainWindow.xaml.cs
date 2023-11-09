@@ -105,6 +105,35 @@ namespace PaintProjectTerm
                 }
             }
         }
+        private void OpenImage_Click(object sender, RoutedEventArgs e)
+        {
+            // Створюємо діалог вибору файлу
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp|All files (*.*)|*.*";
+
+            // Показуємо діалог вибору файлу і очікуємо на вибір файлу
+            if (openFileDialog.ShowDialog() == true)
+            {
+                // Отримуємо шлях до вибраного файлу
+                string imagePath = openFileDialog.FileName;
+
+                // Створюємо новий об'єкт BitmapImage
+                BitmapImage bitmapImage = new BitmapImage(new Uri(imagePath));
+
+                // Створюємо новий об'єкт Image та встановлюємо йому зображення
+                Image image = new Image();
+                image.Source = bitmapImage;
+
+                // Встановлюємо розмір фото як розмір канвасу
+                image.Width = paintCanvas.ActualWidth;
+                image.Height = paintCanvas.ActualHeight;
+
+                // Додаємо зображення на канвас
+                paintCanvas.Children.Add(image);
+            }
+        }
+
+
 
         private void paintCanvas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
